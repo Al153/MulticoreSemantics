@@ -1,20 +1,24 @@
 package uk.ac.cam.at736.step3;
 
 import lombok.Value;
-import uk.ac.cam.at736.step3.arrays.SharedArray;
-import uk.ac.cam.at736.step3.arrays.UnsafeSharedArray;
+import uk.ac.cam.at736.step3.arrays.*;
 
 import java.time.Duration;
 import java.time.Instant;
 
 public class Step3 {
     private SharedArray array;
-    private int additionalThreadCount;
+
     private boolean verbose = true;
 
-    public Step3(SharedArray a, int n) {
-        array = a;
-        additionalThreadCount = n;
+    public Step3() {
+
+
+    }
+
+
+    public Step3( boolean v) {
+        verbose = v;
 
     }
 
@@ -31,13 +35,13 @@ public class Step3 {
 
         for (int i = 0; i < batchSize; i++) {
 
-            if (verbose) System.out.println("Starting test (threads, iterations) = " + additionalThreadCount +
+            if (verbose) System.out.println("Starting test (threads, iterations) = " + otherThreadCount +
                     ", " + iterationsPerInstance + ";");
 
             results[i] = runTestInstance(primary, otherThreads);
 
             if (verbose) System.out.println(
-                    "Completed test (threads, iterations) = " + additionalThreadCount +
+                    "Completed test (threads, iterations) = " + otherThreadCount +
                             ", " + iterationsPerInstance + "; in " +
                             results[i] + "ns");
         }
@@ -67,7 +71,17 @@ public class Step3 {
     }
 
 
+    public static void main(String[] args) throws InterruptedException {
+        Step3 tester = new Step3(false);
+        SharedArray arr = new TTSSharedArray(5);
 
-    public void run()
+        System.out.println("Starting");
+        for (int i = 0; i < 20; i ++) {
+            BatchTestResult result = tester.runBatch(10, 100, i, arr);
+
+            System.out.println("Threads: " + i + " " + result.prettyPrint());
+        }
+
+    }
 }
 

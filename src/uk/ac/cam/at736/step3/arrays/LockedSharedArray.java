@@ -2,8 +2,8 @@ package uk.ac.cam.at736.step3.arrays;
 
 public final class LockedSharedArray extends SharedArray {
 
-    public LockedSharedArray(int x) {
-        super(x);
+    public LockedSharedArray(int size) {
+        super(size);
     }
 
 

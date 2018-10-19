@@ -5,13 +5,13 @@ import java.util.Random;
 public abstract class SharedArray {
     protected int[] arr;
 
-    protected SharedArray(int x) {
+    protected SharedArray(int size) {
 
-        arr = new int[x];
+        arr = new int[size];
 
         Random rand = new Random();
 
-        for (int i = 0; i < x; i++) {
+        for (int i = 0; i < size; i++) {
             arr[i] = rand.nextInt();
         }
     }

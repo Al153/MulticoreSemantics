@@ -5,8 +5,8 @@ import java.util.concurrent.atomic.AtomicBoolean;
 public final class TTSSharedArray extends SharedArray {
     private AtomicBoolean lock = new AtomicBoolean(false);
 
-    protected TTSSharedArray(int x) {
-        super(x);
+    public TTSSharedArray(int size) {
+        super(size);
     }
 
     private void waitLock() {
@@ -14,7 +14,7 @@ public final class TTSSharedArray extends SharedArray {
 
             while (lock.get()) {
             }
-        } while (lock.compareAndSet(false, true));
+        } while (!lock.compareAndSet(false, true));
     }
 
     private void unlock() {

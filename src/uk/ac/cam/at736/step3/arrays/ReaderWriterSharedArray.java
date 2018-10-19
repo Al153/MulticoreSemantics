@@ -5,8 +5,8 @@ import java.util.concurrent.atomic.AtomicInteger;
 public final class ReaderWriterSharedArray extends SharedArray {
     private AtomicInteger lock = new AtomicInteger(0);
 
-    protected ReaderWriterSharedArray(int x) {
-        super(x);
+    public ReaderWriterSharedArray(int size) {
+        super(size);
     }
 
     private void acquireWrite() {
