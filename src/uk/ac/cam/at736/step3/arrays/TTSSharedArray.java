@@ -25,7 +25,7 @@ public final class TTSSharedArray extends SharedArray {
     @Override
     public void write(int index, int value) {
         waitLock();
-        arr[index] = value;
+        arr[index % arr.length] = value;
         unlock();
     }
 
@@ -40,7 +40,6 @@ public final class TTSSharedArray extends SharedArray {
         unlock();
         return sum;
     }
-
 
 
 }

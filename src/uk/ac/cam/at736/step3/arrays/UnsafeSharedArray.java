@@ -1,8 +1,10 @@
 package uk.ac.cam.at736.step3.arrays;
 
-import uk.ac.cam.at736.step3.arrays.SharedArray;
-
 public final class UnsafeSharedArray extends SharedArray {
+    public UnsafeSharedArray(int x) {
+        super(x);
+    }
+
     @Override
     public int sum() {
         int total = 0;
@@ -15,10 +17,6 @@ public final class UnsafeSharedArray extends SharedArray {
 
     @Override
     public void write(int index, int value) {
-        arr[index] = value;
-    }
-
-    public UnsafeSharedArray(int x) {
-        super(x);
+        arr[index % arr.length] = value;
     }
 }

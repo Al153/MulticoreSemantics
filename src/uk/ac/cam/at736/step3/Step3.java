@@ -1,5 +1,6 @@
 package uk.ac.cam.at736.step3;
 
+import lombok.Value;
 import uk.ac.cam.at736.step3.arrays.SharedArray;
 import uk.ac.cam.at736.step3.arrays.UnsafeSharedArray;
 
@@ -9,6 +10,7 @@ import java.time.Instant;
 public class Step3 {
     private SharedArray array;
     private int additionalThreadCount;
+    private boolean verbose = true;
 
     public Step3(SharedArray a, int n) {
         array = a;
@@ -16,19 +18,37 @@ public class Step3 {
 
     }
 
-    public void runTest(int iterations) throws InterruptedException {
+    private BatchTestResult runBatch(int batchSize, int iterationsPerInstance, int otherThreadCount, SharedArray array) throws InterruptedException {
+        SumRunner[] otherThreads = new SumRunner[otherThreadCount];
 
-        Thread mainThread = new Thread(new SumRunner(array, iterations));
-        SumRunner[] otherThreads = new SumRunner[additionalThreadCount];
-
-        for (int i = 0; i < additionalThreadCount; i++) {
-            otherThreads[i] = new SumRunner(array, Integer.MAX_VALUE);
+        for (int i = 0; i < otherThreadCount; i++) {
+            otherThreads[i] = new SumRunner(array, iterationsPerInstance);
         }
 
+        SumRunner primary = new SumRunner(array, iterationsPerInstance);
 
+        long[] results = new long[batchSize];
 
-        System.out.println("Starting test (threads, iterations) = " + additionalThreadCount +
-                ", " + iterations + ";");
+        for (int i = 0; i < batchSize; i++) {
+
+            if (verbose) System.out.println("Starting test (threads, iterations) = " + additionalThreadCount +
+                    ", " + iterationsPerInstance + ";");
+
+            results[i] = runTestInstance(primary, otherThreads);
+
+            if (verbose) System.out.println(
+                    "Completed test (threads, iterations) = " + additionalThreadCount +
+                            ", " + iterationsPerInstance + "; in " +
+                            results[i] + "ns");
+        }
+
+        return new BatchTestResult(results);
+    }
+
+    private long runTestInstance(SumRunner primary, SumRunner[] otherThreads) throws InterruptedException {
+
+        Thread mainThread = new Thread(primary);
+
         Instant start = Instant.now();
         mainThread.start();
         for (SumRunner thread : otherThreads) {
@@ -42,19 +62,12 @@ public class Step3 {
         }
         Instant end = Instant.now();
 
-        System.out.println(
-                "Completed test (threads, iterations) = " + additionalThreadCount +
-                        ", " + iterations + "; in " +
-                        Duration.between(start, end).toNanos() + "ns");
+
+        return Duration.between(start, end).toNanos();
     }
 
-    public static void main(String[] args) throws InterruptedException {
-        SharedArray unsafe = new UnsafeSharedArray(5000);
-        Step3 tester1 = new Step3(unsafe, 100);
-        tester1.runTest(1000);
 
 
-    }
+    public void run()
 }
-
 

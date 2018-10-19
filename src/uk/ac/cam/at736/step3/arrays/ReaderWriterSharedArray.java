@@ -9,28 +9,28 @@ public final class ReaderWriterSharedArray extends SharedArray {
         super(x);
     }
 
-    private void acquireWrite(){
+    private void acquireWrite() {
         do {
             if (lock.get() == 0 && lock.compareAndSet(0, -1)) break;
         } while (true);
     }
 
-    private void releaseWrite(){
+    private void releaseWrite() {
         lock.set(0);
     }
 
-    private void acquireRead(){
+    private void acquireRead() {
         do {
             int oldVal = lock.get();
             if ((oldVal >= 0) && lock.compareAndSet(oldVal, oldVal + 1)) break;
         } while (true);
     }
 
-    private void releaseRead(){
+    private void releaseRead() {
         int oldVal;
         do {
             oldVal = lock.get();
-        } while (!lock.compareAndSet(oldVal, oldVal-1));
+        } while (!lock.compareAndSet(oldVal, oldVal - 1));
     }
 
     @Override
@@ -45,11 +45,10 @@ public final class ReaderWriterSharedArray extends SharedArray {
     }
 
 
-
     @Override
     public void write(int index, int value) {
         acquireWrite();
-        arr[index] = value;
+        arr[index % arr.length] = value;
         releaseWrite();
     }
 

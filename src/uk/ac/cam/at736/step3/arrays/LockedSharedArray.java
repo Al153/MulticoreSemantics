@@ -22,7 +22,7 @@ public final class LockedSharedArray extends SharedArray {
     @Override
     public void write(int index, int value) {
         synchronized (this) {
-            arr[index] = value;
+            arr[index % arr.length] = value;
         }
     }
 }

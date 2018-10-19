@@ -4,6 +4,7 @@ import java.util.Random;
 
 public abstract class SharedArray {
     protected int[] arr;
+
     protected SharedArray(int x) {
 
         arr = new int[x];
@@ -16,5 +17,6 @@ public abstract class SharedArray {
     }
 
     public abstract int sum();
+
     public abstract void write(int index, int value);
 }
