@@ -1,0 +1,28 @@
+package uk.ac.cam.at736.step3.arrays;
+
+public final class LockedSharedArray extends SharedArray {
+
+    public LockedSharedArray(int x) {
+        super(x);
+    }
+
+
+    @Override
+    public int sum() {
+        synchronized (this) {
+            int total = 0;
+            for (int i = 0; i < arr.length; i++) {
+                total += i;
+            }
+
+            return total;
+        }
+    }
+
+    @Override
+    public void write(int index, int value) {
+        synchronized (this) {
+            arr[index] = value;
+        }
+    }
+}
