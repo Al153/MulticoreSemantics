@@ -1,28 +1,26 @@
-package uk.ac.cam.at736.step3;
+package uk.ac.cam.at736.step3.testers;
 
-import lombok.Value;
-import uk.ac.cam.at736.step3.arrays.*;
+import uk.ac.cam.at736.step3.SumRunner;
+import uk.ac.cam.at736.step3.arrays.SharedArray;
+import uk.ac.cam.at736.step3.config.BatchTestConfig;
+import uk.ac.cam.at736.step3.data.BatchTestResult;
 
 import java.time.Duration;
 import java.time.Instant;
 
-public class Step3 {
-    private SharedArray array;
-
-    private boolean verbose = true;
-
-    public Step3() {
-
-
+public class BatchTester {
+    private BatchTestConfig cfg;
+    public BatchTester(BatchTestConfig cfg) {
+        this.cfg = cfg;
     }
 
+    public BatchTestResult runBatch() throws InterruptedException {
+        SharedArray array = cfg.getBuildArray().apply(cfg.getArraySize());
 
-    public Step3( boolean v) {
-        verbose = v;
+        int otherThreadCount = cfg.getThreads().getCount();
+        int iterationsPerInstance = cfg.getIterations().getCount();
+        int batchSize = cfg.getNoBatches().getCount();
 
-    }
-
-    private BatchTestResult runBatch(int batchSize, int iterationsPerInstance, int otherThreadCount, SharedArray array) throws InterruptedException {
         SumRunner[] otherThreads = new SumRunner[otherThreadCount];
 
         for (int i = 0; i < otherThreadCount; i++) {
@@ -35,12 +33,12 @@ public class Step3 {
 
         for (int i = 0; i < batchSize; i++) {
 
-            if (verbose) System.out.println("Starting test (threads, iterations) = " + otherThreadCount +
+            if (cfg.isVerbose()) System.out.println("Starting test (threads, iterations) = " + otherThreadCount +
                     ", " + iterationsPerInstance + ";");
 
             results[i] = runTestInstance(primary, otherThreads);
 
-            if (verbose) System.out.println(
+            if (cfg.isVerbose()) System.out.println(
                     "Completed test (threads, iterations) = " + otherThreadCount +
                             ", " + iterationsPerInstance + "; in " +
                             results[i] + "ns");
@@ -66,22 +64,7 @@ public class Step3 {
         }
         Instant end = Instant.now();
 
-
         return Duration.between(start, end).toNanos();
-    }
-
-
-    public static void main(String[] args) throws InterruptedException {
-        Step3 tester = new Step3(false);
-        SharedArray arr = new TTSSharedArray(5);
-
-        System.out.println("Starting");
-        for (int i = 0; i < 20; i ++) {
-            BatchTestResult result = tester.runBatch(10, 100, i, arr);
-
-            System.out.println("Threads: " + i + " " + result.prettyPrint());
-        }
-
     }
 }
 

@@ -1,4 +1,4 @@
-package uk.ac.cam.at736.step3;
+package uk.ac.cam.at736.step3.data;
 
 import lombok.Value;
 
@@ -23,10 +23,10 @@ public class BatchTestResult {
             sd += Math.pow(results[i] - mu, 2);
         }
 
-        return sd;
+        return sd / results.length;
     }
 
     String prettyPrint() {
-        return "Batch( mean: " + getMean() +", std" + getStandardDeviation() +")";
+        return "Batch( mean: " + getMean() + ", std" + getStandardDeviation() + ")";
     }
 }
