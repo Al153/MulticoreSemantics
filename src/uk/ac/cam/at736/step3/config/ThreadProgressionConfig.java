@@ -17,7 +17,9 @@ public class ThreadProgressionConfig {
     IterationsToComplete iterations;
     TestsPerBatch noBatches;
     ArraySize size;
+    WriteEnabled writeEnabled;
     boolean verbose;
+
 
 
     public List<BatchTestConfig> getBatchConfigs() {
@@ -31,6 +33,7 @@ public class ThreadProgressionConfig {
                             noBatches,
                             new ThreadCount(i),
                             size,
+                            writeEnabled,
                             verbose
                     )
             );

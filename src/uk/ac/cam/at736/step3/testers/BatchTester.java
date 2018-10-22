@@ -1,6 +1,7 @@
 package uk.ac.cam.at736.step3.testers;
 
 import uk.ac.cam.at736.step3.SumRunner;
+import uk.ac.cam.at736.step3.WriteEnabledSumRunner;
 import uk.ac.cam.at736.step3.arrays.SharedArray;
 import uk.ac.cam.at736.step3.config.BatchTestConfig;
 import uk.ac.cam.at736.step3.data.BatchTestResult;
@@ -24,10 +25,12 @@ public class BatchTester {
         SumRunner[] otherThreads = new SumRunner[otherThreadCount];
 
         for (int i = 0; i < otherThreadCount; i++) {
-            otherThreads[i] = new SumRunner(array, iterationsPerInstance);
+            otherThreads[i] = cfg.getWrite().isEnabled()
+                    ? new WriteEnabledSumRunner(array, iterationsPerInstance, i+1,  cfg.getWrite().getK())
+                    : new SumRunner(array, iterationsPerInstance, i+1);
         }
 
-        SumRunner primary = new SumRunner(array, iterationsPerInstance);
+        SumRunner primary = new SumRunner(array, iterationsPerInstance, 0);
 
         long[] results = new long[batchSize];
 

@@ -23,6 +23,7 @@ public class ArraySizeProgressionConfig {
     Function<ArraySize, SharedArray> buildArray;
     IterationsToComplete iterations;
     TestsPerBatch noBatches;
+    WriteEnabled enabled;
 
     boolean verbose;
 
@@ -39,6 +40,7 @@ public class ArraySizeProgressionConfig {
                             iterations,
                             noBatches,
                             new ArraySize(i),
+                            enabled,
                             verbose
                     )
             );

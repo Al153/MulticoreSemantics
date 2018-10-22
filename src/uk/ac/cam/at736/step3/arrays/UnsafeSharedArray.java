@@ -6,7 +6,7 @@ public final class UnsafeSharedArray extends SharedArray {
     }
 
     @Override
-    public int sum() {
+    public int sum(int threadNo) {
         int total = 0;
         for (int i = 0; i < arr.length; i++) {
             total += i;
@@ -16,7 +16,7 @@ public final class UnsafeSharedArray extends SharedArray {
     }
 
     @Override
-    public void write(int index, int value) {
+    public void write(int index, int value, int threadNo) {
         arr[index % arr.length] = value;
     }
 }

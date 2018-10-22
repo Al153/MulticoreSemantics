@@ -17,7 +17,10 @@ public class FullTestConfig {
     TestsPerBatch batchNo;
     ThreadCount maxThreads;
     IterationsToComplete iterations;
+    WriteEnabled enabled;
     boolean verbose;
+
+
 
 
 
@@ -36,7 +39,9 @@ public class FullTestConfig {
                             testCase.getBuildArray(),
                             iterations,
                             batchNo,
+                            enabled,
                             verbose
+
                     )
             );
         }

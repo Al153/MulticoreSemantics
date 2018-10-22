@@ -8,7 +8,7 @@ public final class LockedSharedArray extends SharedArray {
 
 
     @Override
-    public int sum() {
+    public int sum(int threadNo) {
         synchronized (this) {
             int total = 0;
             for (int i = 0; i < arr.length; i++) {
@@ -20,7 +20,7 @@ public final class LockedSharedArray extends SharedArray {
     }
 
     @Override
-    public void write(int index, int value) {
+    public void write(int index, int value, int threadNo) {
         synchronized (this) {
             arr[index % arr.length] = value;
         }

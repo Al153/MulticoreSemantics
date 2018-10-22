@@ -34,7 +34,7 @@ public final class ReaderWriterSharedArray extends SharedArray {
     }
 
     @Override
-    public int sum() {
+    public int sum(int threadNo) {
         acquireRead();
         int sum = 0;
         for (int anArr : arr) {
@@ -46,7 +46,7 @@ public final class ReaderWriterSharedArray extends SharedArray {
 
 
     @Override
-    public void write(int index, int value) {
+    public void write(int index, int value, int threadNo) {
         acquireWrite();
         arr[index % arr.length] = value;
         releaseWrite();

@@ -8,10 +8,12 @@ public class SumRunner implements Runnable {
     protected final int iterations;
     protected volatile int temp = 0;
     protected volatile boolean shutdown = false;
+    protected int threadNo;
 
-    public SumRunner(SharedArray arr, int iterations) {
+    public SumRunner(SharedArray arr, int iterations,int threadNo) {
         this.arr = arr;
         this.iterations = iterations;
+        this.threadNo = threadNo;
     }
 
     public void shutdown() {
@@ -21,7 +23,7 @@ public class SumRunner implements Runnable {
     @Override
     public void run() {
         for (int i = 0; i < iterations && !shutdown; i++) {
-            this.temp = this.arr.sum();
+            this.temp = this.arr.sum(this.threadNo);
         }
         this.shutdown = false;
     }

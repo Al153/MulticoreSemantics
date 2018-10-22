@@ -16,7 +16,7 @@ public abstract class SharedArray {
         }
     }
 
-    public abstract int sum();
+    public abstract int sum(int threadNo);
 
-    public abstract void write(int index, int value);
+    public abstract void write(int index, int value, int threadNo);
 }

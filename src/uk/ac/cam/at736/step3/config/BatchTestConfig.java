@@ -13,7 +13,8 @@ public class BatchTestConfig {
     TestsPerBatch noBatches;
     ThreadCount threads;
     ArraySize arraySize;
-
+    WriteEnabled write;
     boolean verbose;
+
 }
 

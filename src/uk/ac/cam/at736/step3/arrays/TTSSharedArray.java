@@ -23,7 +23,7 @@ public final class TTSSharedArray extends SharedArray {
 
 
     @Override
-    public void write(int index, int value) {
+    public void write(int index, int value, int threadNo) {
         waitLock();
         arr[index % arr.length] = value;
         unlock();
@@ -31,7 +31,7 @@ public final class TTSSharedArray extends SharedArray {
 
 
     @Override
-    public int sum() {
+    public int sum(int threadNo) {
         waitLock();
         int sum = 0;
         for (int anArr : arr) {
