@@ -70,3 +70,4 @@ lib/
 *.iml
 
 results/venv
+results/__pycache__
