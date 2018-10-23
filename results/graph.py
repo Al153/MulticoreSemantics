@@ -1,4 +1,5 @@
 import re
+from util import *
 import numpy as np
 
 
@@ -53,7 +54,6 @@ def plot_progressions(datablob, name, array_sizes):
         means = [t["mu"] for t in zipped]
         std_devs = [t["sig"] for t in zipped]
 
-        ax1.plot(x_axis, means)
         ax1.errorbar(x_axis, means, std_devs, fmt='o')
 
 
@@ -61,12 +61,12 @@ if __name__ == "__main__":
     import matplotlib.pyplot as plt
     import json
 
-    dat_file = open("data/run_2018-10-22T14-51-41")
+    dat_file = open(get_most_recent_file_name("data", "run_"))
     data = json.loads(dat_file.read())
     print(data)
     datablob = DataBlob(data)
 
     # datablob.results["TATAS"].result_by_size[500].results_by_thread_count[5].values
-    plot_progressions(datablob, "Flags", [500, 1000, 2000, 3000, 4000, 5000])
+    plot_progressions(datablob, "Flags", [5, 1000, 5000])
 
     plt.show()

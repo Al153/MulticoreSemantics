@@ -9,18 +9,13 @@ import uk.ac.cam.at736.step3.data.ArraySizeProgressionResult;
 import uk.ac.cam.at736.step3.data.FullTestResult;
 import uk.ac.cam.at736.step3.data.ThreadCount;
 
-import java.io.File;
 import java.io.IOException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.time.Instant;
-import java.time.LocalDateTime;
-import java.util.HashMap;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
-public class  FullTest {
+public class FullTest {
     private FullTestConfig cfg;
 
     public FullTest(FullTestConfig cfg) {
@@ -30,7 +25,7 @@ public class  FullTest {
     public FullTestResult doTest() throws InterruptedException {
         Map<String, ArraySizeProgressionResult> results = new HashMap<>();
 
-        for (ArraySizeProgressionConfig arraySizeProgressionConfig: cfg.getCfgs()){
+        for (ArraySizeProgressionConfig arraySizeProgressionConfig : cfg.getCfgs()) {
             results.put(
                     arraySizeProgressionConfig.getTestName(),
                     new ArraySizeProgressionTester(arraySizeProgressionConfig).doTest()
@@ -50,11 +45,11 @@ public class  FullTest {
         cases.add(new TestInstance("Flags", size -> new FlagBasedSharedArray(size.getSize(), 20)));
 
 
+        List<ArraySize> sizes = Arrays.asList(new ArraySize(5), new ArraySize(1000), new ArraySize(5000));
+
         FullTestConfig cfg = new FullTestConfig(
                 cases,
-                new ArraySize(500),
-                new ArraySize(5001), //new ArraySize(5000),
-                500,
+                sizes,
                 new TestsPerBatch(100),
                 new ThreadCount(16),
                 new IterationsToComplete(10000),

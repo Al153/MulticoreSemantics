@@ -10,9 +10,7 @@ import java.util.List;
 public class FullTestConfig {
 
     List<TestInstance> testCases;
-    ArraySize min;
-    ArraySize max;
-    int arraySizeStep;
+    List<ArraySize> sizes;
 
     TestsPerBatch batchNo;
     ThreadCount maxThreads;
@@ -30,9 +28,7 @@ public class FullTestConfig {
             result.add(
                     new ArraySizeProgressionConfig(
                             testCase.getName(),
-                            min,
-                            max,
-                            arraySizeStep,
+                            sizes,
                             new ThreadCount(0),
                             maxThreads,
                             1,

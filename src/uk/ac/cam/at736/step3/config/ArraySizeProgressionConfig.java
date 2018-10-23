@@ -12,9 +12,7 @@ import java.util.function.Function;
 public class ArraySizeProgressionConfig {
     String testName;
 
-    ArraySize minSize;
-    ArraySize maxSize;
-    int arraySizeStep;
+    List<ArraySize> sizes;
 
     ThreadCount minThreads;
     ThreadCount maxThreads;
@@ -30,7 +28,7 @@ public class ArraySizeProgressionConfig {
     public List<ThreadProgressionConfig> getThreadProgressionConfigs() {
         LinkedList<ThreadProgressionConfig> cfgs = new LinkedList<>();
 
-        for (int i = minSize.getSize(); i < maxSize.getSize(); i += arraySizeStep) {
+        for (ArraySize size: sizes) {
             cfgs.add(
                     new ThreadProgressionConfig(
                             minThreads,
@@ -39,7 +37,7 @@ public class ArraySizeProgressionConfig {
                             buildArray,
                             iterations,
                             noBatches,
-                            new ArraySize(i),
+                            size,
                             enabled,
                             verbose
                     )
