@@ -53,8 +53,8 @@ public class FullTest {
                 new TestsPerBatch(100),
                 new ThreadCount(16),
                 new IterationsToComplete(10000),
-                new WriteEnabled(false, 0),
-                true
+                new WriteEnabled(true, 100 ),
+                false
         );
 
 
