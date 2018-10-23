@@ -58,7 +58,7 @@ public class  FullTest {
                 new TestsPerBatch(100),
                 new ThreadCount(16),
                 new IterationsToComplete(10000),
-                new WriteEnabled(true, 0),
+                new WriteEnabled(false, 0),
                 true
         );
 
@@ -71,7 +71,7 @@ public class  FullTest {
         ObjectWriter writer = mapper.writer(new DefaultPrettyPrinter());
 
         String HOME = System.getProperty("user.home");
-        String timestamp = Instant.now().toString().replace(":", "-").split("\\.")[0];
+        String timestamp = Instant.now().toString().replace(":", "-").split("-\\d\\d\\.")[0];
         String runName = "run_" + timestamp;
         Path p = Paths.get(HOME, "IdeaProjects", "MulticoreSemantics", "results", "data", runName);
         writer.writeValue(p.toFile(), result);
