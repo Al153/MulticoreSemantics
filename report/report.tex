@@ -12,19 +12,50 @@
 
 \begin{document}
 
-\centerline{\Large A Denotational Semantics for a polymorphic Effect Systems}
+\centerline{\Large Multicore Semantics and Programming}
 \vspace{2em}
-\centerline{\Large \emph{A Part III project proposal}}
+\centerline{\Large \emph{Pratical Report}}
 \vspace{2em}
 \centerline{\large A. J. Taylor (\emph{at736}), St John's College}
-\vspace{1em}
-\centerline{\large Project Supervisor: Prof Alan Mycroft}
 \vspace{1em}
 
 \begin{abstract}
 \textsl{
-	A category theoretic approach to build a graded monad based denotational semantics for a language with polymorphism over effects.
+	A written report for Tim Harris' section of the course
 } 
 \end{abstract}
+
+
+\section{Summary of Experimental Conditions and Methods}
+
+\subsection{Hardware}
+Experiments were carried out on a HP Spectre Laptop, which was plugged in and on maximum performance settings. 
+
+The laptop has a quad core, hyperthreaded, intel i7 8550u processor for a total of 8 physical threads (two threads per core) \footnote{https://ark.intel.com/products/122589/Intel-Core-i7-8550U-Processor-8M-Cache-up-to-4-00-GHz-}.
+
+\subsection{Experimental Methods}
+Experiments were written in Java and run under Windows 10. The laptop was set not to sleep for the duration of each experiment and other user processes were kept to a minimum to improve reliability of the results.
+
+\subsection{Code Written}
+The code used to run experiments and process the resulting data can be found on a dedicated Github repository\footnote{https://github.com/Al153/MulticoreSemantics}.
+
+
+\section{The Experiments}
+\subsection{Set Up and Initial Test}
+The code ran correctly.
+\subsection{Simple Multithreading}
+
+\subsection{Read Only Shared-Arrays}
+
+\subsection{TATAS Lock}
+
+\subsection{Reader-Writer Lock}
+
+\subsection{Flag-Based Lock}
+
+\subsection{Write Mode}
+
+
+\section{Summary}
 
 \end{document}
