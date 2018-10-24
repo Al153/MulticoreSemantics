@@ -1,13 +1,9 @@
-import fnmatch
-import os
-import re
-import numpy as np
 import json
 
 from util import *
 
 fname = get_most_recent_file_name("data", "step2_")
-with open("data/actual_step2", "r") as f:
+with open(fname, "r") as f:
     d = json.loads(f.read())['results']
     results = {int(x): d[x] for x in d}
     xs = [int(k) for k in results]

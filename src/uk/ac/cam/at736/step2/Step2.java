@@ -63,7 +63,7 @@ public class Step2 {
 
         for (int i = 0; i < 100; i ++ ) {
             for (int n = 1; n <= 12; n ++) {
-                Step2 harness = new Step2(n, 100);
+                Step2 harness = new Step2(n, 200);
                 results.addResult(n, harness.runTest());
             }
         }

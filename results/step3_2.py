@@ -1,4 +1,4 @@
-from graph import DataBlob
+from records import DataBlob
 from util import get_most_recent_file_name, plot_array_size_progressions
 
 if __name__ == "__main__":
@@ -6,7 +6,7 @@ if __name__ == "__main__":
     import json
 
     fname = get_most_recent_file_name("data", "run_")
-    dat_file = open("data/ReadOnly", "r")
+    dat_file = open(fname, "r")
     data = json.loads(dat_file.read())
     print(data)
     datablob = DataBlob(data)
@@ -14,3 +14,4 @@ if __name__ == "__main__":
     plot_array_size_progressions(datablob, "Safe")
 
     plt.show()
+    plt.savefig()
