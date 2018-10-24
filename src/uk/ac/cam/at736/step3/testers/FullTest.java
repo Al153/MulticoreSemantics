@@ -53,7 +53,7 @@ public class FullTest {
         WriteEnabled write10k = new WriteEnabled(true, 10000);
         WriteEnabled write100 = new WriteEnabled(true, 100);
 
-        List<ArraySize> standardArraySize = Collections.singletonList(new ArraySize(5000));
+        List<ArraySize> standardArraySize = Collections.singletonList(new ArraySize(1000));
 
         cases.add(
                 new TestInstance(
@@ -67,7 +67,7 @@ public class FullTest {
                 new TestInstance(
                         "Safe",
                         size -> new LockedSharedArray(size.getSize()),
-                        standardArraySize,
+                        Arrays.asList(new ArraySize(5), new ArraySize(1000), new ArraySize(5000)),
                         readOnly
                 )
         );
@@ -75,7 +75,7 @@ public class FullTest {
                 new TestInstance(
                         "TATAS",
                         size -> new TTSSharedArray(size.getSize()),
-                        standardArraySize,
+                        Arrays.asList(new ArraySize(5), new ArraySize(1000), new ArraySize(5000)),
                         readOnly
                 )
         );
@@ -83,7 +83,7 @@ public class FullTest {
                 new TestInstance(
                         "ReaderWriter",
                         size -> new ReaderWriterSharedArray(size.getSize()),
-                        standardArraySize,
+                        Arrays.asList(new ArraySize(5), new ArraySize(1000), new ArraySize(5000)),
                         readOnly
                 )
         );
@@ -91,7 +91,7 @@ public class FullTest {
                 new TestInstance(
                         "Flags",
                         size -> new FlagBasedSharedArray(size.getSize(), 20),
-                        standardArraySize,
+                        Arrays.asList(new ArraySize(5), new ArraySize(1000), new ArraySize(5000)),
                         readOnly
                 )
         );
