@@ -19,6 +19,9 @@ public class ThreadProgressionTester {
     public ThreadProgressionResult doProgressionTest() throws InterruptedException {
         HashMap<ThreadCount, BatchTestResult> results = new HashMap<>();
         for (BatchTestConfig batchCfg: cfg.getBatchConfigs()){
+            if (cfg.isVerbose()){
+                System.out.println("\t\t\t\tStarting ThreadCount: " + batchCfg.getThreads().getCount());
+            }
             BatchTester tester = new BatchTester(batchCfg);
             results.put(batchCfg.getThreads(), tester.runBatch());
         }

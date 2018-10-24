@@ -35,16 +35,7 @@ public class BatchTester {
         long[] results = new long[batchSize];
 
         for (int i = 0; i < batchSize; i++) {
-
-            if (cfg.isVerbose()) System.out.println("Starting test (threads, iterations) = " + otherThreadCount +
-                    ", " + iterationsPerInstance + ";");
-
             results[i] = runTestInstance(primary, otherThreads);
-
-            if (cfg.isVerbose()) System.out.println(
-                    "Completed test (threads, iterations) = " + otherThreadCount +
-                            ", " + iterationsPerInstance + "; in " +
-                            results[i] + "ns");
         }
 
         return new BatchTestResult(results);

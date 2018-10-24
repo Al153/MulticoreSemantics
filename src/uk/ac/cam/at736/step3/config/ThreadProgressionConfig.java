@@ -21,11 +21,11 @@ public class ThreadProgressionConfig {
     boolean verbose;
 
 
-
     public List<BatchTestConfig> getBatchConfigs() {
         LinkedList<BatchTestConfig> cfgs = new LinkedList<>();
 
         for (int i = minThreads.getCount(); i < maxThreads.getCount(); i += threadCountStep) {
+
             cfgs.add(
                     new BatchTestConfig(
                             buildArray,

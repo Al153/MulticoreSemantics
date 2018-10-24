@@ -10,16 +10,11 @@ import java.util.List;
 public class FullTestConfig {
 
     List<TestInstance> testCases;
-    List<ArraySize> sizes;
 
     TestsPerBatch batchNo;
     ThreadCount maxThreads;
     IterationsToComplete iterations;
-    WriteEnabled enabled;
     boolean verbose;
-
-
-
 
 
     public List<ArraySizeProgressionConfig> getCfgs() {
@@ -28,16 +23,15 @@ public class FullTestConfig {
             result.add(
                     new ArraySizeProgressionConfig(
                             testCase.getName(),
-                            sizes,
+                            testCase.getSizes(),
                             new ThreadCount(0),
                             maxThreads,
                             1,
                             testCase.getBuildArray(),
                             iterations,
                             batchNo,
-                            enabled,
+                            testCase.getEnabled(),
                             verbose
-
                     )
             );
         }
