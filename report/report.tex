@@ -37,7 +37,7 @@ The laptop has a quad core, hyperthreaded, intel i7 8550u processor for a total 
 Experiments were written in Java and run under Windows 10. The laptop was set not to sleep for the duration of each experiment and other user processes were kept to a minimum to improve reliability of the results.
 
 \subsection{Code Written}
-The code used to run experiments and process the resulting data can be found on a dedicated Github repository\footnote{https://github.com/Al153/MulticoreSemantics}.
+The code used to run experiments and process the resulting data can be found on a dedicated Github repository\footnote{https://github.com/Al153/MulticoreSemantics}. I created an abstract \texttt{SharedArray} class containing an array with specifiable length and an abstract \texttt{sum} (read) and \texttt{update} (write) operations. Appropriate subclasses of this class were created with the \texttt{sum} and \texttt{update} operations taking the correct locks.
 
 
 \section{The Experiments}
@@ -54,6 +54,8 @@ The code ran correctly.
 \subsection{Flag-Based Lock}
 
 \subsection{Write Mode}
+
+
 
 
 \section{Summary}
