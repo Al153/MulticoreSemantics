@@ -10,7 +10,7 @@ data = json.loads(dat_file.read())
 print(data)
 datablob = DataBlob(data)
 
-plot_array_size_progressions("report/step3_1.png", datablob, "Unsafe")
+plot_array_size_progressions("../report/step3_1.png", datablob, "Unsafe")
 
 if __name__ == "__main__":
     plt.show()

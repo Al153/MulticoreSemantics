@@ -13,7 +13,7 @@ datablob = DataBlob(data)
 print(datablob.results.keys())
 
 plot_same_size_different_lock(
-    "report/step7_1.png",
+    "../report/step7_1.png",
     datablob,
     1000,
     [
@@ -25,7 +25,7 @@ plot_same_size_different_lock(
     ])
 
 plot_same_size_different_lock(
-    "report/step7_2.png",
+    "../report/step7_2.png",
     datablob,
     1000,
     [
@@ -37,7 +37,7 @@ plot_same_size_different_lock(
     ], error_bars=False)
 
 plot_same_size_different_lock(
-    "report/step7_3.png",
+    "../report/step7_3.png",
     datablob,
     1000,
     [
@@ -48,7 +48,7 @@ plot_same_size_different_lock(
         "Write_Flags_100"])
 
 plot_same_size_different_lock(
-    "report/step7_4.png",
+    "../report/step7_4.png",
     datablob,
     1000,
     [

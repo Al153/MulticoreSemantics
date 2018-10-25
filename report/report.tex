@@ -93,7 +93,7 @@ however the variance increases significantly as the number of threads and size o
 \end{figure}
 
 
-The TaTaS-lock performed slightly better than the mutex-lock for small numbers of threads due to its better cache line behaviour, but as the number increased, the performance of the TaTaS lock deteriorated and the standard deviation of its operation increased greatly (Fig \ref{fig:step4_1}}).  This is potentially due to the overhead of having to do an extra test before test and setting, slightly delaying the operation of the code.
+The TaTaS-lock performed slightly better than the mutex-lock for small numbers of threads due to its better cache line behaviour, but as the number increased, the performance of the TaTaS lock deteriorated and the standard deviation of its operation increased greatly (Fig \ref{fig:step4_1}).  This is potentially due to the overhead of having to do an extra test before test and setting, slightly delaying the operation of the code.
 
 \todo{better explanation}
 
@@ -130,6 +130,9 @@ The flag based lock outperformed the mutex-lock less significantly than the read
 
 \subsection{Write Mode}
 
+
+For the write-mode experiments, I fixed the array size to be $X = 1000$. Further more, since all experiments up to this point had been run to make 50,000 calls to the \texttt{sum} function in the main thread before halting, running a writing\texttt{update} operation every 100k iterations would have resulted in barely any write operations. Hence I decided to deviate from the specification and run \texttt{update}s every 10,000 iterations in the sparse update case.
+In the frequent update case, I kept $K=100$ as specified.
 \begin{figure}\label{fig:step7_1}
 \centering
 \includegraphics[scale=0.65]{step7_1.png}
@@ -141,6 +144,8 @@ The flag based lock outperformed the mutex-lock less significantly than the read
 \includegraphics[scale=0.65]{step7_2.png}
 \caption{Speed of the mutex-locked array versus the flag-locked array when instantiated with various sizes, drawn without error bars to more clearly show the mean-behaviour.}
 \end{figure}
+
+Other than some anomalous cases, all of the more advanced locks outperformed the naive mutex lock in the sparse update case (Figs \ref{fig:step7_1}, \ref{fig:step7_2}). The flags based lock appeared to be the best performer in the higher thread count cases, though the variance of results outweighed the difference in means.
 
 \begin{figure}\label{fig:step7_3}
 \centering
@@ -154,8 +159,7 @@ The flag based lock outperformed the mutex-lock less significantly than the read
 \caption{Speed of the mutex-locked array versus the flag-locked array when instantiated with various sizes, drawn without error bars to more clearly show the mean-behaviour.}
 \end{figure}
 
-
-
+More interesting trends emerge when one looks at higher frequency write operations. In the $K=100$ case (Figs \ref{fig:step7_3}, \ref{fig:step7_4}), it can clearly be seen that the naive mutex case performs most poorly, followed by the reader-writer lock. The TaTaS lock and and Flag based locks, however can be seen to perform similarly to the unsafe shared array.
 
 \section{Summary}
 

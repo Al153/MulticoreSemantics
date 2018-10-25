@@ -197,14 +197,13 @@ public class FullTest {
 
 
 
-
         List<ArraySize> sizes = Arrays.asList(new ArraySize(5), new ArraySize(1000), new ArraySize(5000));
 
         FullTestConfig cfg = new FullTestConfig(
                 cases,
-                new TestsPerBatch(100),
+                new TestsPerBatch(200),
                 new ThreadCount(16),
-                new IterationsToComplete(50000),
+                new IterationsToComplete(200000),
 
                 true
         );

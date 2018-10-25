@@ -21,5 +21,5 @@ with open(fname, "r") as f:
     ax.set_ylabel("Time to Complete (ms)")
 
     ax.grid(True)
-
+if __name__ == "__main__":
     plt.show()

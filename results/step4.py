@@ -10,6 +10,6 @@ data = json.loads(dat_file.read())
 print(data)
 datablob = DataBlob(data)
 
-plot_same_size_different_lock("report/step4_1.png", datablob, 5000, ["Mutex", "TATAS"])
+plot_same_size_different_lock("../report/step4_1.png", datablob, 5000, ["Mutex", "TATAS"])
 if __name__ == "__main__":
     plt.show()

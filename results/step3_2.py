@@ -10,7 +10,7 @@ data = json.loads(dat_file.read())
 print(data)
 datablob = DataBlob(data)
 
-plot_array_size_progressions("report/step3_2.png", datablob, "Mutex")
+plot_array_size_progressions("../report/step3_2.png", datablob, "Mutex")
 
 if __name__ == "__main__":
     plt.show()

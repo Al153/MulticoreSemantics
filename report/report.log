@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6840 64-bit) (preloaded format=pdflatex 2018.10.24)  25 OCT 2018 09:46
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6840 64-bit) (preloaded format=pdflatex 2018.10.24)  25 OCT 2018 22:48
 entering extended mode
 **./report.tex
 (report.tex
@@ -146,10 +146,12 @@ G,.JBIG2,.JB2,.eps]
 )
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 26.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14.4> not available
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10.95> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 33.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14.4> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 35.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 37.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <10.95> on input line 38.
 LaTeX Font Info:    External font `cmex10' loaded for size
@@ -173,81 +175,79 @@ Package pdftex.def Info: step2.png  used on input line 53.
  [1
 
 {C:/Users/altay/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
-<step3_1.png, id=14, 462.528pt x 346.896pt>
+<step3_1.png, id=14, 415.5525pt x 315.0972pt>
 File: step3_1.png Graphic file (type png)
 <use step3_1.png>
 Package pdftex.def Info: step3_1.png  used on input line 65.
-(pdftex.def)             Requested size: 300.63962pt x 225.47972pt.
-<step3_2.png, id=15, 462.528pt x 346.896pt>
+(pdftex.def)             Requested size: 270.10593pt x 204.81075pt.
+<step3_2.png, id=15, 415.5525pt x 315.0972pt>
 File: step3_2.png Graphic file (type png)
 <use step3_2.png>
 Package pdftex.def Info: step3_2.png  used on input line 72.
-(pdftex.def)             Requested size: 300.63962pt x 225.47972pt.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10.95> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 76.
-<step3_3.png, id=16, 462.528pt x 346.896pt>
+(pdftex.def)             Requested size: 270.10593pt x 204.81075pt.
+<step3_3.png, id=16, 415.5525pt x 315.0972pt>
 File: step3_3.png Graphic file (type png)
 <use step3_3.png>
 Package pdftex.def Info: step3_3.png  used on input line 82.
-(pdftex.def)             Requested size: 300.63962pt x 225.47972pt.
-<step4_1.png, id=17, 462.528pt x 346.896pt>
+(pdftex.def)             Requested size: 270.10593pt x 204.81075pt.
+<step4_1.png, id=17, 423.5022pt x 315.0972pt>
 File: step4_1.png Graphic file (type png)
 <use step4_1.png>
 Package pdftex.def Info: step4_1.png  used on input line 91.
-(pdftex.def)             Requested size: 300.63962pt x 225.47972pt.
-<step5_1.png, id=18, 462.528pt x 346.896pt>
-File: step5_1.png Graphic file (type png)
-<use step5_1.png>
-Package pdftex.def Info: step5_1.png  used on input line 101.
-(pdftex.def)             Requested size: 300.63962pt x 225.47972pt.
-<step5_2.png, id=19, 462.528pt x 346.896pt>
-File: step5_2.png Graphic file (type png)
-<use step5_2.png>
-Package pdftex.def Info: step5_2.png  used on input line 108.
-(pdftex.def)             Requested size: 300.63962pt x 225.47972pt.
+(pdftex.def)             Requested size: 275.27315pt x 204.81075pt.
  [2 <./step2.png>] [3 <./step3_1.png> <./step3_2.png>] [4 <./step3_3.png> <./st
 ep4_1.png>]
-<step6_1.png, id=34, 462.528pt x 346.896pt>
+<step5_1.png, id=32, 415.5525pt x 315.0972pt>
+File: step5_1.png Graphic file (type png)
+<use step5_1.png>
+Package pdftex.def Info: step5_1.png  used on input line 103.
+(pdftex.def)             Requested size: 270.10593pt x 204.81075pt.
+<step5_2.png, id=33, 415.5525pt x 315.0972pt>
+File: step5_2.png Graphic file (type png)
+<use step5_2.png>
+Package pdftex.def Info: step5_2.png  used on input line 109.
+(pdftex.def)             Requested size: 270.10593pt x 204.81075pt.
+<step6_1.png, id=34, 415.5525pt x 315.0972pt>
 File: step6_1.png Graphic file (type png)
 <use step6_1.png>
 Package pdftex.def Info: step6_1.png  used on input line 119.
-(pdftex.def)             Requested size: 300.63962pt x 225.47972pt.
-<step6_2.png, id=35, 462.528pt x 346.896pt>
+(pdftex.def)             Requested size: 270.10593pt x 204.81075pt.
+<step6_2.png, id=35, 415.5525pt x 315.0972pt>
 File: step6_2.png Graphic file (type png)
 <use step6_2.png>
-Package pdftex.def Info: step6_2.png  used on input line 128.
-(pdftex.def)             Requested size: 300.63962pt x 225.47972pt.
-<step7_1.png, id=36, 462.528pt x 346.896pt>
+Package pdftex.def Info: step6_2.png  used on input line 127.
+(pdftex.def)             Requested size: 270.10593pt x 204.81075pt.
+<step7_1.png, id=36, 423.5022pt x 315.0972pt>
 File: step7_1.png Graphic file (type png)
 <use step7_1.png>
-Package pdftex.def Info: step7_1.png  used on input line 136.
-(pdftex.def)             Requested size: 300.63962pt x 225.47972pt.
-<step7_2.png, id=37, 462.528pt x 346.896pt>
+Package pdftex.def Info: step7_1.png  used on input line 138.
+(pdftex.def)             Requested size: 275.27315pt x 204.81075pt.
+<step7_2.png, id=37, 415.5525pt x 315.0972pt>
 File: step7_2.png Graphic file (type png)
 <use step7_2.png>
-Package pdftex.def Info: step7_2.png  used on input line 142.
-(pdftex.def)             Requested size: 300.63962pt x 225.47972pt.
-<step7_3.png, id=38, 462.528pt x 346.896pt>
+Package pdftex.def Info: step7_2.png  used on input line 144.
+(pdftex.def)             Requested size: 270.10593pt x 204.81075pt.
+<step7_3.png, id=38, 423.5022pt x 315.0972pt>
 File: step7_3.png Graphic file (type png)
 <use step7_3.png>
-Package pdftex.def Info: step7_3.png  used on input line 148.
-(pdftex.def)             Requested size: 300.63962pt x 225.47972pt.
-<step7_4.png, id=39, 462.528pt x 346.896pt>
+Package pdftex.def Info: step7_3.png  used on input line 152.
+(pdftex.def)             Requested size: 275.27315pt x 204.81075pt.
+<step7_4.png, id=39, 415.5525pt x 315.0972pt>
 File: step7_4.png Graphic file (type png)
 <use step7_4.png>
-Package pdftex.def Info: step7_4.png  used on input line 154.
-(pdftex.def)             Requested size: 300.63962pt x 225.47972pt.
+Package pdftex.def Info: step7_4.png  used on input line 158.
+(pdftex.def)             Requested size: 270.10593pt x 204.81075pt.
  [5 <./step5_1.png>] [6 <./step5_2.png> <./step6_1.png>] [7 <./step6_2.png> <./
 step7_1.png>]
 [8 <./step7_2.png> <./step7_3.png>] [9 <./step7_4.png>] (report.aux) ) 
 Here is how much of TeX's memory you used:
  1972 strings out of 492970
  27809 string characters out of 3135854
- 93368 words of memory out of 3000000
+ 94364 words of memory out of 3000000
  5802 multiletter control sequences out of 15000+200000
  29337 words of font info for 55 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 37i,8n,25p,933b,213s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 37i,8n,25p,933b,215s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Progr
 am Files/MiKTeX 2.9/fonts/enc/dvips/base/8r.enc}<C:/Program Files/MiKTeX 2.9/fo
 nts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type
@@ -256,7 +256,7 @@ rier/ucrr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmb8a.pfb><
 C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><C:/Program Files/
 MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/
 type1/urw/times/utmri8a.pfb>
-Output written on report.pdf (9 pages, 534209 bytes).
+Output written on report.pdf (9 pages, 523670 bytes).
 PDF statistics:
  88 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)

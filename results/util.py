@@ -32,7 +32,7 @@ def plot_same_size_different_lock(fname: str, datablob, size: int, names: list, 
         grid = by_array_size[size]
         draw_thread_progression(ax1, grid, handles, legend_names, name, error_bars)
     format_axes(ax1, handles, legend_names)
-    ax1.savefig(fname, bbox_inches='tight')
+    fig1.savefig(fname, bbox_inches='tight')
 
 
 def plot_array_size_progressions(fname: str, datablob: DataBlob, name: str, error_bars=True):
@@ -45,7 +45,7 @@ def plot_array_size_progressions(fname: str, datablob: DataBlob, name: str, erro
     for size in by_array_size:
         draw_thread_progression(ax1, by_array_size[size], handles, legend_names, name + "_ " + str(size), error_bars)
     format_axes(ax1, handles, legend_names)
-    ax1.savefig(fname, bbox_inches='tight')
+    fig1.savefig(fname, bbox_inches='tight')
 
 
 def draw_thread_progression(ax: plt.axes, results: ArraySizeResult, handles, legend_names, label: str, error_bars: bool,
@@ -90,7 +90,7 @@ def plot_different_size_different_lock(fname: str, datablob, sizes: list, names:
             grid = by_array_size[size]
             draw_thread_progression(ax1, grid, handles, legend_names, name + "_" + str(size), error_bars)
     format_axes(ax1, handles, legend_names)
-    ax1.savefig(fname, bbox_inches='tight')
+    fig1.savefig(fname, bbox_inches='tight')
 
 
 def format_axes(ax: plt.axes, handles: list, legend_names: list):

@@ -10,9 +10,9 @@ data = json.loads(dat_file.read())
 print(data)
 datablob = DataBlob(data)
 
-plot_different_size_different_lock("report/step5_1.png", datablob, [5, 1000, 5000], ["Mutex", "ReaderWriter"])
+plot_different_size_different_lock("../report/step5_1.png", datablob, [5, 1000, 5000], ["Mutex", "ReaderWriter"])
 
-plot_different_size_different_lock("report/step5_2.png", datablob, [5, 1000, 5000], ["Mutex", "ReaderWriter"],
+plot_different_size_different_lock("../report/step5_2.png", datablob, [5, 1000, 5000], ["Mutex", "ReaderWriter"],
                                    error_bars=False)
 
 if __name__ == "__main__":
