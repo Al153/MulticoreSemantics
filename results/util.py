@@ -20,7 +20,7 @@ def get_most_recent_file_name(dir: str, prefix):
     return os.path.join(dir, matches[0])
 
 
-def plot_same_size_different_lock(datablob, size: int, names: list, error_bars=True):
+def plot_same_size_different_lock(fname: str, datablob, size: int, names: list, error_bars=True):
     fig1 = plt.figure()
     ax1 = fig1.add_subplot(111)
     ax1.grid(True)
@@ -32,9 +32,10 @@ def plot_same_size_different_lock(datablob, size: int, names: list, error_bars=T
         grid = by_array_size[size]
         draw_thread_progression(ax1, grid, handles, legend_names, name, error_bars)
     format_axes(ax1, handles, legend_names)
+    ax1.savefig(fname, bbox_inches='tight')
 
 
-def plot_array_size_progressions(datablob: DataBlob, name: str, error_bars=True):
+def plot_array_size_progressions(fname: str, datablob: DataBlob, name: str, error_bars=True):
     fig1 = plt.figure()
     ax1 = fig1.add_subplot(111)
     ax1.grid(True)
@@ -44,6 +45,7 @@ def plot_array_size_progressions(datablob: DataBlob, name: str, error_bars=True)
     for size in by_array_size:
         draw_thread_progression(ax1, by_array_size[size], handles, legend_names, name + "_ " + str(size), error_bars)
     format_axes(ax1, handles, legend_names)
+    ax1.savefig(fname, bbox_inches='tight')
 
 
 def draw_thread_progression(ax: plt.axes, results: ArraySizeResult, handles, legend_names, label: str, error_bars: bool,
@@ -74,7 +76,7 @@ def draw_thread_progression(ax: plt.axes, results: ArraySizeResult, handles, leg
     legend_names.append(label)
 
 
-def plot_different_size_different_lock(datablob, sizes: list, names: list, error_bars: bool = True):
+def plot_different_size_different_lock(fname: str, datablob, sizes: list, names: list, error_bars: bool = True):
     fig1 = plt.figure()
     ax1 = fig1.add_subplot(111)
     ax1.grid(True)
@@ -88,6 +90,7 @@ def plot_different_size_different_lock(datablob, sizes: list, names: list, error
             grid = by_array_size[size]
             draw_thread_progression(ax1, grid, handles, legend_names, name + "_" + str(size), error_bars)
     format_axes(ax1, handles, legend_names)
+    ax1.savefig(fname, bbox_inches='tight')
 
 
 def format_axes(ax: plt.axes, handles: list, legend_names: list):

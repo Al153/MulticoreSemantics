@@ -65,7 +65,7 @@ public class FullTest {
         );
         cases.add(
                 new TestInstance(
-                        "Safe",
+                        "Mutex",
                         size -> new LockedSharedArray(size.getSize()),
                         Arrays.asList(new ArraySize(5), new ArraySize(1000), new ArraySize(5000)),
                         readOnly
@@ -118,7 +118,7 @@ public class FullTest {
 
         cases.add(
                 new TestInstance(
-                        "Write_safe_10k",
+                        "Write_Mutex_10k",
                         size -> new LockedSharedArray(size.getSize()),
                         standardArraySize,
                         write10k
@@ -128,7 +128,7 @@ public class FullTest {
 
         cases.add(
                 new TestInstance(
-                        "Write_Safe",
+                        "Write_Mutex_100",
                         size -> new LockedSharedArray(size.getSize()),
                         standardArraySize,
                         write100

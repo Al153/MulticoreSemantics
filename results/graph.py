@@ -14,5 +14,5 @@ if __name__ == "__main__":
     # datablob.results["TATAS"].result_by_size[500].results_by_thread_count[5].values
     plot_array_size_progressions(datablob, "Unsafe")
 
-    plot_same_size_different_lock(datablob, 5000, ["Unsafe", "Safe", "TATAS", "ReaderWriter", "Flags"])
+    plot_same_size_different_lock(datablob, 5000, ["Unsafe", "Mutex", "TATAS", "ReaderWriter", "Flags"])
     plt.show()
