@@ -36,6 +36,7 @@ public class BatchTester {
 
         for (int i = 0; i < batchSize; i++) {
             results[i] = runTestInstance(primary, otherThreads);
+            System.gc();
         }
 
         return new BatchTestResult(results);

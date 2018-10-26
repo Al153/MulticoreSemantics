@@ -18,7 +18,7 @@
 
 \centerline{\Large Multicore Semantics and Programming}
 \vspace{2em}
-\centerline{\Large \emph{Pratical Report}}
+\centerline{\Large \emph{Practical Report}}
 \vspace{2em}
 \centerline{\large A. J. Taylor (\emph{at736}), St John's College}
 \vspace{1em}
@@ -38,7 +38,7 @@
 Experiments were carried out on a HP Spectre Laptop, which was plugged in and on maximum performance settings. The laptop has a quad core, hyperthreaded, intel i7 8550u processor for a total of 8 physical threads (two threads per core) \footnote{https://ark.intel.com/products/122589/Intel-Core-i7-8550U-Processor-8M-Cache-up-to-4-00-GHz-}.
 
 \subsection{Experimental Methods}
-Experiments were written in Java and run under Windows 10. The laptop was set not to sleep for the duration of each experiment and other user processes were kept to a minimum to improve reliability of the results.
+Experiments were written in Java and run under Windows 10. The laptop was set not to sleep for the duration of each experiment and other user processes were kept to a minimum to improve reliability of the results. The construction of all objects used by the performance tests is kept in the setup code and is not timed. Furthermore, GC runs are forced between performance tests and no individual test is expected to produce enough objects to make a GC call mid-test-run.
 
 \subsection{Code Written}
 The code used to run experiments and process the resulting data can be found on a dedicated Github repository\footnote{https://github.com/Al153/MulticoreSemantics}. I created an abstract \texttt{SharedArray} class containing an array with specifiable length and an abstract \texttt{sum} (read) and \texttt{update} (write) operations. Appropriate subclasses of this class were created with the \texttt{sum} and \texttt{update} operations taking the correct locks.
@@ -93,7 +93,7 @@ however the variance increases significantly as the number of threads and size o
 \end{figure}
 
 
-The TaTaS-lock performed slightly better than the mutex-lock for small numbers of threads due to its better cache line behaviour, but as the number increased, the performance of the TaTaS lock deteriorated and the standard deviation of its operation increased greatly (Fig \ref{fig:step4_1}).  This is potentially due to the overhead of having to do an extra test before test and setting, slightly delaying the operation of the code.
+The TaTaS-lock performed slightly better than the mutex-lock for small numbers of threads due to its better cache line behaviour, but as the number increased, the performance of the TaTaS lock deteriorated and the standard deviation of its operation increased greatly (Fig \ref{fig:step4_1}).  This is potentially due to the overhead of having to do an extra test before test and setting, slightly delaying the operation of the code. Another potential culprit is the larger number of memory bus and cache transactions per operation.
 
 \todo{better explanation}
 
@@ -110,7 +110,7 @@ The TaTaS-lock performed slightly better than the mutex-lock for small numbers o
 \caption{Speed of the mutex-locked array versus the reader-writer locked array when instantiated with various sizes, drawn without error bars to more clearly show the mean-behaviour.}
 \end{figure}
 
-When the array size is not negligibly small, the reader-writer lock significantly outperforms the standard mutex lock as it allows multiple summing operations to occur at once. It also has a much smaller standard deviation for each operation than seen in mutex case (Figs \ref{fig:step5_1}, \ref{fig:step5_2}). This may be due to the much shorter array access delay time due to not having to wait for a lock on the array.
+When the array size is not negligibly small, the reader-writer lock significantly outperforms the standard mutex lock as it allows multiple summing operations to occur at once. It also has a much smaller standard deviation for each operation than seen in mutex case (Figs \ref{fig:step5_1}, \ref{fig:step5_2}). This may be due to the much shorter array access delay time due to not having to wait for a lock on the array in order to read the array. As a result, fewer coincidental pathological cases arose where the threads blocked on each other.
 
 \subsection{Flag-Based Lock}
 
@@ -120,7 +120,7 @@ When the array size is not negligibly small, the reader-writer lock significantl
 \caption{Speed of the mutex-locked array versus the flag-locked array when instantiated with various sizes}
 \end{figure}
 
-The flag based lock outperformed the mutex-lock less significantly than the reader-writer lock but with a tighter standard deviation. \todo{clearer}
+The flag based lock outperformed the mutex-lock less significantly than the reader-writer lock but with an even tighter standard deviation due to the cache lines containing flags not 
 
 \begin{figure}\label{fig:step6_2}
 \centering
@@ -131,36 +131,40 @@ The flag based lock outperformed the mutex-lock less significantly than the read
 \subsection{Write Mode}
 
 
-For the write-mode experiments, I fixed the array size to be $X = 1000$. Further more, since all experiments up to this point had been run to make 50,000 calls to the \texttt{sum} function in the main thread before halting, running a writing\texttt{update} operation every 100k iterations would have resulted in barely any write operations. Hence I decided to deviate from the specification and run \texttt{update}s every 10,000 iterations in the sparse update case.
+For the write-mode experiments, I fixed the array size to be $X = 1000$. Further more, since all experiments up to this point had been run to make 100,000 calls to the \texttt{sum} function in the main thread before halting, running a writing\texttt{update} operation every 100k iterations would have resulted in barely any write operations. Hence I decided to deviate from the specification and run \texttt{update}s every 10,000 iterations in the sparse update case.
 In the frequent update case, I kept $K=100$ as specified.
 \begin{figure}\label{fig:step7_1}
 \centering
 \includegraphics[scale=0.65]{step7_1.png}
-\caption{Speed of the mutex-locked array versus the flag-locked array when instantiated with various sizes, drawn without error bars to more clearly show the mean-behaviour.}
+\caption{Performance of each type of lock when used for update operations every 10,000 operations.}
 \end{figure}
 
 \begin{figure}\label{fig:step7_2}
 \centering
 \includegraphics[scale=0.65]{step7_2.png}
-\caption{Speed of the mutex-locked array versus the flag-locked array when instantiated with various sizes, drawn without error bars to more clearly show the mean-behaviour.}
+\caption{Performance of each type of lock when used for update operations every 10,000 operations, drawn without error bars to more clearly show the mean-behaviour.}
 \end{figure}
 
+
+\todo{This is now wrong}
 Other than some anomalous cases, all of the more advanced locks outperformed the naive mutex lock in the sparse update case (Figs \ref{fig:step7_1}, \ref{fig:step7_2}). The flags based lock appeared to be the best performer in the higher thread count cases, though the variance of results outweighed the difference in means.
 
 \begin{figure}\label{fig:step7_3}
 \centering
 \includegraphics[scale=0.65]{step7_3.png}
-\caption{Speed of the mutex-locked array versus the flag-locked array when instantiated with various sizes, drawn without error bars to more clearly show the mean-behaviour.}
+\caption{Performance of each type of lock when used for update operations every 100 operations}
 \end{figure}
 
 \begin{figure}\label{fig:step7_4}
 \centering
 \includegraphics[scale=0.65]{step7_4.png}
-\caption{Speed of the mutex-locked array versus the flag-locked array when instantiated with various sizes, drawn without error bars to more clearly show the mean-behaviour.}
+\caption{Performance of each type of lock when used for update operations every 100 operations, drawn without error bars to more clearly show the mean-behaviour.}
 \end{figure}
 
-More interesting trends emerge when one looks at higher frequency write operations. In the $K=100$ case (Figs \ref{fig:step7_3}, \ref{fig:step7_4}), it can clearly be seen that the naive mutex case performs most poorly, followed by the reader-writer lock. The TaTaS lock and and Flag based locks, however can be seen to perform similarly to the unsafe shared array.
+More interesting trends emerge when one looks at higher frequency write operations. In the $K=100$ case (Figs \ref{fig:step7_3}, \ref{fig:step7_4}), it can clearly be seen that the naive mutex case performs as poorly as the other worst other locks. However, the flags based locks and TaTaS locks performed well across all thread counts.
 
 \section{Summary}
+
+One issue with these experiments has been the non-reproducibility of the tests. Despite the high number of repeats (200 tests per batch) and length of tests in terms of operations (100k operations per test), and reviews of my experimental methods, I have seen poor reproducibility. Another anomaly is the general lack of performance degradation as the number of threads increased. In each test case, we would expect the amount of time to complete to increase by around a factor of two between 8 threads and 16, however this has not occurred. This suggests there is an additional overhead in the tests brought about by the operation of the JVM. Perhaps using a lower level language such as C or C++ with compiler optimisations turned off might cause trends to be more obvious.
 
 \end{document}
