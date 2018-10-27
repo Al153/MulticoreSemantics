@@ -42,19 +42,30 @@ public class BatchTester {
         return new BatchTestResult(results);
     }
 
-    private long runTestInstance(SumRunner primary, SumRunner[] otherThreads) throws InterruptedException {
+    private long runTestInstance(SumRunner primary, SumRunner[] others) throws InterruptedException {
 
         Thread mainThread = new Thread(primary);
 
+
+
+        Thread[] otherThreads = new Thread[others.length];
+
+        // construct all the threads
+        for (int i = 0; i < others.length; i++) {
+            otherThreads[i] = new Thread(others[i]);
+        }
+
+
         Instant start = Instant.now();
         mainThread.start();
-        for (SumRunner thread : otherThreads) {
-            new Thread(thread).start();
+
+        for (Thread t: otherThreads){
+            t.start();
         }
 
         mainThread.join();
 
-        for (SumRunner thread : otherThreads) {
+        for (SumRunner thread : others) {
             thread.shutdown();
         }
         Instant end = Instant.now();
