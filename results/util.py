@@ -54,7 +54,7 @@ def draw_thread_progression(ax: plt.axes, results: ArraySizeResult, handles, leg
         return [ns / 1_000_000 for ns in nss]
 
     grid = results.results_by_thread_count
-    zipped = [{"count": count, "mu": np.mean(to_ms(grid[count].values)), "sig": np.std(to_ms(grid[count].values))}
+    zipped = [{"count": count + 1, "mu": np.mean(to_ms(grid[count].values)), "sig": np.std(to_ms(grid[count].values))}
               for count in
               grid]
 

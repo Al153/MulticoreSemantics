@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6840 64-bit) (preloaded format=pdflatex 2018.10.24)  26 OCT 2018 22:35
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6840 64-bit) (preloaded format=pdflatex 2018.10.24)  28 OCT 2018 15:52
 entering extended mode
 **./report.tex
 (report.tex
@@ -86,19 +86,19 @@ Package: times 2005/04/12 PSNFSS-v9.2a (SPQR)
 ) (report.aux)
 \openout1 = `report.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Try loading font information for OT1+ptm on input line 17.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Try loading font information for OT1+ptm on input line 16.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\ot1ptm.fd"
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
@@ -145,24 +145,22 @@ G,.JBIG2,.JB2,.eps]
 (grfext)             \AppendGraphicsExtensions on input line 456.
 )
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 26.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10.95> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 33.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 25.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14.4> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 35.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 34.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 37.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 36.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <10.95> on input line 38.
+(Font)              <10.95> on input line 37.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 38.
+(Font)              <8> on input line 37.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 38.
+(Font)              <6> on input line 37.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <9> on input line 38.
+(Font)              <9> on input line 37.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 38.
-LaTeX Font Info:    Try loading font information for OT1+pcr on input line 44.
+(Font)              <5> on input line 37.
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 43.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\ot1pcr.fd"
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
@@ -170,7 +168,7 @@ File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 <step2.png, id=1, 462.528pt x 346.896pt>
 File: step2.png Graphic file (type png)
 <use step2.png>
-Package pdftex.def Info: step2.png  used on input line 53.
+Package pdftex.def Info: step2.png  used on input line 52.
 (pdftex.def)             Requested size: 300.63962pt x 225.47972pt.
  [1
 
@@ -183,86 +181,83 @@ Package pdftex.def Info: step3_1.png  used on input line 65.
 <step3_2.png, id=15, 423.5022pt x 315.0972pt>
 File: step3_2.png Graphic file (type png)
 <use step3_2.png>
-Package pdftex.def Info: step3_2.png  used on input line 72.
+Package pdftex.def Info: step3_2.png  used on input line 73.
 (pdftex.def)             Requested size: 275.27315pt x 204.81075pt.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10.95> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 78.
 <step3_3.png, id=16, 423.5022pt x 315.0972pt>
 File: step3_3.png Graphic file (type png)
 <use step3_3.png>
-Package pdftex.def Info: step3_3.png  used on input line 82.
+Package pdftex.def Info: step3_3.png  used on input line 83.
 (pdftex.def)             Requested size: 275.27315pt x 204.81075pt.
 <step4_1.png, id=17, 423.5022pt x 315.0972pt>
 File: step4_1.png Graphic file (type png)
 <use step4_1.png>
-Package pdftex.def Info: step4_1.png  used on input line 91.
+Package pdftex.def Info: step4_1.png  used on input line 93.
 (pdftex.def)             Requested size: 275.27315pt x 204.81075pt.
  [2 <./step2.png>] [3 <./step3_1.png> <./step3_2.png>] [4 <./step3_3.png> <./st
 ep4_1.png>]
 <step5_1.png, id=32, 423.5022pt x 315.0972pt>
 File: step5_1.png Graphic file (type png)
 <use step5_1.png>
-Package pdftex.def Info: step5_1.png  used on input line 103.
+Package pdftex.def Info: step5_1.png  used on input line 104.
 (pdftex.def)             Requested size: 275.27315pt x 204.81075pt.
 <step5_2.png, id=33, 415.5525pt x 315.0972pt>
 File: step5_2.png Graphic file (type png)
 <use step5_2.png>
-Package pdftex.def Info: step5_2.png  used on input line 109.
+Package pdftex.def Info: step5_2.png  used on input line 111.
 (pdftex.def)             Requested size: 270.10593pt x 204.81075pt.
 <step6_1.png, id=34, 423.5022pt x 315.0972pt>
 File: step6_1.png Graphic file (type png)
 <use step6_1.png>
-Package pdftex.def Info: step6_1.png  used on input line 119.
+Package pdftex.def Info: step6_1.png  used on input line 123.
 (pdftex.def)             Requested size: 275.27315pt x 204.81075pt.
 <step6_2.png, id=35, 415.5525pt x 315.0972pt>
 File: step6_2.png Graphic file (type png)
 <use step6_2.png>
-Package pdftex.def Info: step6_2.png  used on input line 127.
+Package pdftex.def Info: step6_2.png  used on input line 132.
 (pdftex.def)             Requested size: 270.10593pt x 204.81075pt.
-<step7_1.png, id=36, 430.0065pt x 315.8199pt>
+<step7_1.png, id=36, 423.5022pt x 315.0972pt>
 File: step7_1.png Graphic file (type png)
 <use step7_1.png>
-Package pdftex.def Info: step7_1.png  used on input line 138.
-(pdftex.def)             Requested size: 279.50092pt x 205.28049pt.
-<step7_2.png, id=37, 421.3341pt x 315.0972pt>
+Package pdftex.def Info: step7_1.png  used on input line 144.
+(pdftex.def)             Requested size: 275.27315pt x 204.81075pt.
+ [5 <./step5_1.png>] [6 <./step5_2.png> <./step6_1.png>]
+<step7_2.png, id=46, 415.5525pt x 316.5426pt>
 File: step7_2.png Graphic file (type png)
 <use step7_2.png>
-Package pdftex.def Info: step7_2.png  used on input line 144.
-(pdftex.def)             Requested size: 273.86392pt x 204.81075pt.
- [5 <./step5_1.png>] [6 <./step5_2.png> <./step6_1.png>] [7 <./step6_2.png> <./
-step7_1.png>]
-<step7_3.png, id=53, 427.8384pt x 315.0972pt>
+Package pdftex.def Info: step7_2.png  used on input line 151.
+(pdftex.def)             Requested size: 270.10593pt x 205.75024pt.
+<step7_3.png, id=47, 423.5022pt x 315.0972pt>
 File: step7_3.png Graphic file (type png)
 <use step7_3.png>
-Package pdftex.def Info: step7_3.png  used on input line 154.
-(pdftex.def)             Requested size: 278.09166pt x 204.81075pt.
-<step7_4.png, id=54, 427.8384pt x 315.0972pt>
+Package pdftex.def Info: step7_3.png  used on input line 162.
+(pdftex.def)             Requested size: 275.27315pt x 204.81075pt.
+<step7_4.png, id=48, 415.5525pt x 315.0972pt>
 File: step7_4.png Graphic file (type png)
 <use step7_4.png>
-Package pdftex.def Info: step7_4.png  used on input line 160.
-(pdftex.def)             Requested size: 278.09166pt x 204.81075pt.
-
-[8 <./step7_2.png>] [9 <./step7_3.png> <./step7_4.png>] (report.aux)
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
- ) 
+Package pdftex.def Info: step7_4.png  used on input line 169.
+(pdftex.def)             Requested size: 270.10593pt x 204.81075pt.
+ [7 <./step6_2.png>] [8 <./step7_1.png> <./step7_2.png>] [9 <./step7_3.png> <./
+step7_4.png>] [10] (report.aux) ) 
 Here is how much of TeX's memory you used:
- 1972 strings out of 492970
- 27809 string characters out of 3135854
- 93364 words of memory out of 3000000
- 5802 multiletter control sequences out of 15000+200000
+ 1971 strings out of 492970
+ 27805 string characters out of 3135854
+ 94335 words of memory out of 3000000
+ 5801 multiletter control sequences out of 15000+200000
  29337 words of font info for 55 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 37i,8n,25p,933b,215s stack positions out of 5000i,500n,10000p,200000b,50000s
-{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/base/8r.enc}<C:/Program Files/Mi
-KTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKTeX 2.9
-/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX 2.9/fonts/ty
-pe1/urw/courier/ucrr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/u
-tmb8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><C:/Pro
-gram Files/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><C:/Program Files/MiKTeX
- 2.9/fonts/type1/urw/times/utmri8a.pfb>
-Output written on report.pdf (9 pages, 467999 bytes).
+ 37i,8n,25p,1625b,215s stack positions out of 5000i,500n,10000p,200000b,50000s
+{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/b
+ase/8r.enc}<C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.p
+fb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Pr
+ogram Files/MiKTeX 2.9/fonts/type1/urw/courier/ucrr8a.pfb><C:/Program Files/MiK
+TeX 2.9/fonts/type1/urw/times/utmb8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/typ
+e1/urw/times/utmr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmr
+8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
+Output written on report.pdf (10 pages, 507978 bytes).
 PDF statistics:
- 88 PDF objects out of 1000 (max. 8388607)
+ 91 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  66 words of extra memory for PDF output out of 10000 (max. 10000000)
 
