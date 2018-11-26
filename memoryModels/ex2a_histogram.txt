@@ -1,0 +1,11 @@
+Choices so far (0): ""
+4 enabled transitions
+No disabled transitions
+
+States 4
+2     :>1:R0=0x0; 1:R2=0x0; via "2,1,3,0"
+2     :>1:R0=0x0; 1:R2=0x1; via "0,2,1,3"
+2     *>1:R0=0x1; 1:R2=0x0; via "1,2,3,0"
+2     :>1:R0=0x1; 1:R2=0x1; via "0,1,2,3"
+Deadlock states 0
+Unhandled exceptions 0
